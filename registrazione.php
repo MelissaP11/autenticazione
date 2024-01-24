@@ -19,12 +19,14 @@
            $cognome=$_POST['cognome'];
            $password=$_POST['password'];
 
-           $query= "insert into utenti  (username , nome , cognome , password )VALUES
+           $query= "insert into utenti(username , nome , cognome , password ) VALUES
            ('$user' , '$nome' , '$cognome' , '$password')";
-           $risultato = mysqli_query($conn,$query);
+           $risultato = mysqli_real_query($conn,$query);
+
                 if(!$risultato){
-                print "errore nel comando";
-                exit();
+                print "errore nell'inserimento: username già esistente";
+                } else {
+                    print "registrazione avvenuta corretamente";
                 }
            mysqli_close($conn);
            ?>

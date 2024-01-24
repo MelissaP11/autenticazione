@@ -2,7 +2,7 @@
 create table utenti (
     Username char(20) primary key,
     Nome     VARCHAR(50) ,
-    Cognome  VARCHAR(50)
+    Cognome  VARCHAR(50),
     Password VARCHAR(50)
 );
 
